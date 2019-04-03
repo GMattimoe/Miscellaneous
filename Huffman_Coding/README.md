@@ -15,3 +15,4 @@ Huffman node contains a class of the node for the huffman tree
 BitInputStream is used to read the bits and convert to characters
 
 BitOutputStream is used to convert the characters into bit format
+
