@@ -29,5 +29,6 @@ public class Decode {
         PrintStream output = new PrintStream(new File(outputFile));
         t.decode(input, output, CHAR_MAX);
         output.close();
+        console.close();
     }
 }
