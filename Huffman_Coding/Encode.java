@@ -45,6 +45,8 @@ public class Encode {
         }
         writeString(codes[CHAR_MAX], output);
         output.close();
+        console.close();
+        input.close();
     }
 
     public static void writeString(String s, BitOutputStream output) {
