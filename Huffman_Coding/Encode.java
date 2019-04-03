@@ -31,7 +31,6 @@ public class Encode {
         // open source file, open output, encode
         FileInputStream input = new FileInputStream(inFile);
         BitOutputStream output = new BitOutputStream(outputFile);
-        boolean done = false;
         int n = input.read();
         while (n != -1) {
             if (codes[n] == null) {
@@ -47,6 +46,7 @@ public class Encode {
         output.close();
         console.close();
         input.close();
+        codeInput.close();
     }
 
     public static void writeString(String s, BitOutputStream output) {
