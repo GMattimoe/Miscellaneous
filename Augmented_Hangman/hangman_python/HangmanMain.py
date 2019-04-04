@@ -5,6 +5,7 @@ the user.  This is a cheating version of hangman that delays picking a word
 to keep its options open.  You can change the setting for SHOW_COUNT to see
 how many options are still left on each turn.
 """
+from HangmanManager import HangmanManager
 dictionary_path = "../"
 dictionary_file_name = "dictionary2.txt"
 
@@ -14,7 +15,11 @@ def main():
     dict_file = open(dictionary_path+dictionary_file_name, "r")
     dictionary = dict_file.read().splitlines()
     print(dictionary)
-
+    length = int(input("What length word do you want to use? "))
+    print(length)
+    max_guesses = int(input("How many wrong answers allowed? "))
+    print(max_guesses)
+    hangman = HangmanManager(dictionary, length, max_guesses)
 
 if __name__ == "__main__":
     main()

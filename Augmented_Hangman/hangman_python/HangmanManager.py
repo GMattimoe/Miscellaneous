@@ -20,7 +20,7 @@ class HangmanManager:
             self.guesses = set()
             sub_dictionary = set()
             for word in dictionary:
-                if word.len()==length:
+                if len(word)==length:
                     sub_dictionary.add(word)
             self.sub_dictionary = sub_dictionary
 
