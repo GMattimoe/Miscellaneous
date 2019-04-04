@@ -51,4 +51,14 @@ class HangmanManager:
     def pattern_calculation(self):
         word = next(iter(self.sub_dictionary))
         guess_set = self.guesses
-        return "no -- pattern calculation method made {} {}".format(word, guess_set)
+        pattern = ""
+        if word[0] in guess_set:
+            pattern += word[0]
+        else:
+            pattern += "-"
+        for i in range(1,self.word_length):
+                if word[0] in guess_set:
+                    pattern += " " word[i]
+                else:
+                    pattern += " -"
+        return pattern
