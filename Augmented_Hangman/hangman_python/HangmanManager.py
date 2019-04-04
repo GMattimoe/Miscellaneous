@@ -21,7 +21,7 @@ class HangmanManager:
             sub_dictionary = set()
             for word in dictionary:
                 if len(word)==length:
-                    sub_dictionary.add(word)
+                    sub_dictionary.add(word.lower())
             self.sub_dictionary = sub_dictionary
 
     def words(self):
@@ -51,4 +51,4 @@ class HangmanManager:
     def pattern_calculation(self):
         word = next(iter(self.sub_dictionary))
         guess_set = self.guesses
-        return "no pattern calculation method made {} {}".format(word, guess_set)
+        return "no -- pattern calculation method made {} {}".format(word, guess_set)
