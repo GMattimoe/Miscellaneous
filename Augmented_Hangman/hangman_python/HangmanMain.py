@@ -30,8 +30,8 @@ def play_game(hangman):
     while hangman.guesses_left() > 0 and "-" in hangman.pattern():
         print("guesses : {}".format(hangman.guesses_left()))
         #NEED TO ADD THE OPTION TO SHOW NUMBER OF AVAILABLE WORDS
-        print("guessed : ".format(hangman.characters_guessed()))
-        print("current pattern : ".format(hangman.pattern()))
+        print("guessed : {}".format(hangman.characters_guessed()))
+        print("current pattern : {}".format(hangman.pattern()))
         char = input("Your guess? ").lower()
         pass
 

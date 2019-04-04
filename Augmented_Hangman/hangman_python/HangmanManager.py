@@ -58,7 +58,7 @@ class HangmanManager:
             pattern += "-"
         for i in range(1,self.word_length):
                 if word[0] in guess_set:
-                    pattern += " " word[i]
+                    pattern += " " + word[i]
                 else:
                     pattern += " -"
         return pattern
