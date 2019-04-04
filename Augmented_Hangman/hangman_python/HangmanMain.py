@@ -7,7 +7,7 @@ how many options are still left on each turn.
 """
 from HangmanManager import HangmanManager
 dictionary_path = "../"
-dictionary_file_name = "dictionary2.txt"
+dictionary_file_name = "dictionary.txt"
 
 def main():
     print("Welcome to the hangman game")
@@ -24,13 +24,11 @@ def main():
         print("No words of that length in the dictionary.")
     else:
         play_game(hangman)
-        print("need to code the game")
+        show_results(hangman)
 
 def play_game(hangman):
     while hangman.guesses_left() > 0 and "-" in hangman.pattern():
         print("guesses : {}".format(hangman.guesses_left()))
-        print(hangman.words())
-        #NEED TO ADD THE OPTION TO SHOW NUMBER OF AVAILABLE WORDS
         print("guessed : {}".format(hangman.characters_guessed()))
         print("current pattern : {}".format(hangman.pattern()))
         char = input("Your guess? ").lower()
@@ -44,5 +42,19 @@ def play_game(hangman):
                 print("Yes! There is one " + char)
             else:
                 print("Good guess! There are {} {}'s".format(count, char))
+        print()
+
+def show_results(hangman):
+    """
+    reports the results of the game, including showing the answer. 
+    Input a HangmanManager
+    """
+    answer = next(iter(hangman.words()))
+    print("answer = " + answer)
+    if hangman.guesses_left()>0:
+        print("YOU BEAT ME!")
+    else:
+        print("Sorry, you lose!")
+
 if __name__ == "__main__":
     main()

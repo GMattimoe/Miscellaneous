@@ -94,7 +94,7 @@ class HangmanManager:
                 if word[i] == guess:
                     num_occurences += 1
             if num_occurences == 0:
-                self.num_guesses_left += 1
+                self.num_guesses_left -= 1
         return num_occurences
 
     def sort_pattern(self):
