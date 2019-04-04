@@ -14,12 +14,15 @@ def main():
     print()
     dict_file = open(dictionary_path+dictionary_file_name, "r")
     dictionary = dict_file.read().splitlines()
-    print(dictionary)
+    print()
     length = int(input("What length word do you want to use? "))
-    print(length)
+    print()
     max_guesses = int(input("How many wrong answers allowed? "))
-    print(max_guesses)
+    print()
     hangman = HangmanManager(dictionary, length, max_guesses)
-
+    if len(hangman.words()) == 0:
+        print("No words of that length in the dictionary.")
+    else:
+        print("need to code the game")
 if __name__ == "__main__":
     main()

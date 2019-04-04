@@ -25,7 +25,7 @@ class HangmanManager:
             self.sub_dictionary = sub_dictionary
 
     def words(self):
-        """returns the available words in the current dictionary"""
+        """returns a set of the available words in the current dictionary"""
         return self.sub_dictionary
 
     def guesses_left(self):
