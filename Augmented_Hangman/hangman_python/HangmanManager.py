@@ -88,6 +88,14 @@ class HangmanManager:
             self.guesses.add(guess)
             sorted_patterns = self.sort_pattern()
             self.select_new_dictionary(sorted_patterns)
+            word = next(iter(self.sub_dictionary))
+            num_occurences = 0
+            for i in range (self.word_length):
+                if word[i] == guess:
+                    num_occurences += 1
+            if num_occurences == 0:
+                self.num_guesses_left += 1
+        return num_occurences
 
     def sort_pattern(self):
         """

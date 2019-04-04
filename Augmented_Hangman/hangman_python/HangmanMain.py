@@ -37,7 +37,12 @@ def play_game(hangman):
         if char in hangman.characters_guessed():
             print("You already guessed that")
         else:
-            hangman.record(char)
-
+            count = hangman.record(char)
+            if count == 0:
+                print("Unlucky! There were no {}'s".format(char))
+            elif count == 1:
+                print("Yes! There is one " + char)
+            else:
+                print("Good guess! There are {} {}'s".format(count, char))
 if __name__ == "__main__":
     main()
